@@ -1,0 +1,134 @@
+
+.container-father{
+    width: 100%;
+    height: 100%;
+}
+
+.containerCreation {
+    position: relative;
+    text-align: center;
+    margin:auto;
+    background-color: aliceblue;
+    border-radius: 10px;
+    font-size: 3vh;
+    color: black;
+    border-radius:  30px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px
+}
+
+.titleCreate {
+
+    font-family: 'Patua One', cursive;
+    text-align: center;
+    color: aliceblue;
+    font-size: 5vh;
+    margin: 0;
+    margin-bottom: 50px;
+    padding:30px
+
+}
+
+.labelCreate {
+    font-family: 'Quicksand', sans-serif;
+    margin:10px;
+}
+
+.inputCreate {
+
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 10px;
+        background-color: aliceblue;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #223240;
+        color:#223240;
+        padding: 8px;
+        text-align: center;
+    }
+
+.inputCreate:hover{
+        background-color: #223240;
+        border-color: aliceblue;
+        color:aliceblue;
+}
+
+.buttonCreate{
+    font-family: 'Quicksand', sans-serif;
+    background-color: aliceblue;
+        font-size: 2.5vh;
+        font-weight: bold;
+        margin:10px;
+        padding: 7px;
+        cursor: pointer;
+        border-radius: 20px;
+
+
+}
+.buttonCreate:hover{
+    background-color: #223240;
+    color:aliceblue;
+    border-radius: 20px;
+    transition: 0.2s;
+
+}
+.selectId {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    background-color: #223240;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: aliceblue;
+    padding: 20px;
+    color: aliceblue;
+    margin: 10px;
+
+}
+.selectId:focus{
+    background-color: aliceblue;
+    border-color: #223240;
+    color:#223240;
+}
+
+
+.pCreate {
+    color:black;
+    display: inline-block;
+
+}
+
+.divCreate{
+    display: inline-block;
+
+    text-align: center;
+
+}
+
+
+.ErrorText{
+    display: inline-block;
+    color:red;
+    text-align: center;
+    background-color: pink;
+    border-radius: 20px;
+    padding: 3px 50px;
+    font-size: 20px;
+}
+
+
+
+.buttonX {
+    margin:5px;
+    padding: 5px;
+    background-color: aliceblue;
+    color:#223240;
+    font-size: 1.8vh;
+    font-weight: bolder;
+    border-color: #223240;
+    border-radius: 10px;
+    border-width: .35vh;
+    text-align: center;
+}

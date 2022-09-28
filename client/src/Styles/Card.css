@@ -1,0 +1,52 @@
+.tarjeta {
+    font-family: 'Quicksand', sans-serif;
+    margin: 20px;
+    height: 400px;
+    width: 300px;
+    background-color: aliceblue;
+    border-radius: 20px 20px 90px 20px;
+    border-color: #223240;
+    border-width: 3px;
+    border-style: solid;
+    -webkit-box-shadow: 11px 10px 21px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 10px 21px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 10px 21px 0px rgba(0,0,0,0.75);
+    color: black;
+    text-decoration: none
+
+}
+
+.tarjeta:hover {
+    background-color: #223240;
+    color: aliceblue;
+    transition: 0.2s;
+}
+
+.imagen {
+    margin: 20px 10px;
+    height: 150px;
+    width: 250px;
+    /* border-style: solid;
+     border-width: 0.5px;
+    border-color: #223240; */
+    -webkit-box-shadow: 11px 10px 21px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 10px 21px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 10px 21px 0px rgba(0,0,0,0.75);
+}
+
+
+.buttonDetails {
+    padding: 10px;
+    margin: 20px 10px;
+    background-color: #223240;
+    color:aliceblue;
+    font-size: 1.8vh;
+    border-color: aliceblue;
+    border-radius: 20px;
+}
+
+.buttonDetails:hover {
+    transition: 0.2s;
+    border-color: aliceblue;
+}
+

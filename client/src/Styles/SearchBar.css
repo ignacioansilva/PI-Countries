@@ -1,0 +1,33 @@
+.input{
+    margin-left: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    background-color: #223240;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: aliceblue;
+    padding: 8px;
+    color: aliceblue;
+
+}
+::placeholder{
+    color:aliceblue
+}
+.submit{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    margin: 10px;
+    background-color: aliceblue;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #223240;
+    color:#223240;
+    padding: 8px;
+}
+.submit:hover{
+    background-color: #223240;
+    border-color: aliceblue;
+    color:aliceblue;
+}
+

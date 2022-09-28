@@ -2,20 +2,25 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
     sequelize.define('activity', {
- 
-      nombre: {
-        type: DataTypes.STRING,
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+        allownull: false
+      },
+      name: {
+        type: DataTypes.STRING, 
         allowNull: false,
       },
-      dificultad: {
-        type : DataTypes.ENUM('1', '2', '3', '4', '5'),
+      difficulty: {
+        type : DataTypes.STRING,//DataTypes.ENUM('1', '2', '3', '4', '5'),
         allowNull: false
       },
-      duracion : {
+      duration: {
         type: DataTypes.STRING,
         allownull: false
       },
-      temporada: {
+      season: {
         type : DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
         allowNull: false
       }

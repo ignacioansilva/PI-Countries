@@ -1,0 +1,95 @@
+.title{
+    text-align: center;
+    margin:25px;
+    margin-top: 0%;
+    margin-bottom: 0;
+    color: aliceblue;
+    font-size: 50px;
+    padding-top: 25px;
+    font-family: 'Patua One', cursive;
+}
+
+.contenedorTarjetas {
+    background-color: aliceblue;
+    height: 900px;
+    width: 100%;
+    margin:  0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    text-align: center;
+    }
+
+.selectContent {
+    font-family: 'Quicksand', sans-serif;
+    float: right;
+    margin-right: 30px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #223240;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: aliceblue;
+    padding: 8px;
+    color: aliceblue;
+
+}
+.selectContent:focus{
+    background-color: aliceblue;
+    border-color: #223240;
+    color:#223240;
+}
+.selectContent:hover{
+    background-color: aliceblue;
+    border-color: #223240;
+    color:#223240;
+}
+.filtros{
+    background-color: aliceblue;
+    padding:10px;
+    margin-top: 10px;
+    
+}
+
+.reload {
+    font-family: 'Quicksand', sans-serif;
+    background-color: aliceblue;
+        font-size: 2.5vh;
+        font-weight: bold;
+        margin:10px;
+        padding: 7px;
+        cursor: pointer;
+
+
+}
+.reload:hover{
+    background-color: #223240;
+    color:aliceblue;
+    border-radius: 20px;
+    transition: 0.2s;
+
+}
+.createActivity {
+    font-family: 'Quicksand', sans-serif;
+    background-color: aliceblue;
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-decoration: none;
+    margin:10px;
+    color: black;
+    padding: 7px;
+}
+.createActivity:hover{
+    background-color: #223240;
+    color:aliceblue;
+    border-radius: 20px;
+    transition: 0.2s;
+
+}
+.SearchBar{
+    
+    padding-left: 10px;
+    float: right;
+}

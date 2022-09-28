@@ -1,0 +1,48 @@
+.contenedor {
+  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    background-color: aliceblue;
+  }
+
+.paginado{
+    padding: 0 0 0 0;
+    width: 70vw;
+    height: 100%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+}
+
+.numero {
+        background-color: aliceblue;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center ;
+        margin: 2px;
+        cursor: pointer;
+        width: 2vw;
+        height: 2vw;
+        font-size: large;
+        font-weight: bold;
+        border-color: black;
+        border-style: solid;
+        border-radius: 30px;
+        border-width: 1px;
+      
+}
+.numero:hover{
+        background-color: #223240;
+        border-color: aliceblue;
+        color: aliceblue;
+        transition: 0.2s;
+}
+

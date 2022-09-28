@@ -1,0 +1,55 @@
+.h1Landing{
+    padding-top: 180px;
+    padding-left: 200PX;
+    font-size: 80px;
+    color: aliceblue;
+    font-family: 'Patua One', cursive;
+}
+h1{
+    margin:0;
+}
+p{
+    font-size: 20px;
+    padding-left: 180px;
+    color: aliceblue;
+    font-family: 'Quicksand', sans-serif;     
+}
+.container{
+    margin:0;
+    color: aliceblue;
+    font-family: 'Patua One', cursive;
+}
+
+.btn{
+    color: aliceblue;
+    margin-top: 70px;
+    margin-left: 300px;
+    padding: 10px;
+    font-size: 40px;
+    font-family: 'Quicksand', sans-serif;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    border-color: aliceblue;
+    border-radius: 20px;
+    border-width: 4px;
+    -webkit-box-shadow: 5px 4px 10px 0px black;
+    -moz-box-shadow: 5px 4px 10px 0px black;
+    box-shadow: 5px 4px 10px 0px black;
+    background-color: aliceblue;
+    color: black;
+    transition: 0.6s;
+}
+
+.footer{
+    margin-top:400px;
+    margin-left: 1400px;
+  }
+
+
+
+    
