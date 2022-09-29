@@ -23,7 +23,7 @@ const { getApiInfo, getActivities } = require('./src/DBinfo/LoadDataBase');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
+  server.listen(process.env.PORT, () => {
     getApiInfo();
     getActivities();
     console.log('%s listening at 3001'); // eslint-disable-line no-console
