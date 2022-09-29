@@ -37,7 +37,7 @@ export default function Detail(props){
                         <li className="liDetail" >Population: {countrySelected[0].population} people</li>
                         <li className="liDetail" >Area: {countrySelected[0].area} Km²</li>
                         </ul>
-                    </div>
+                    </div> <br />
                     <div className='activitiesDetail'>  {countrySelected[0].activities?.map(el=>{
                         return(
                         <div className='activityCardDetail'>
@@ -50,7 +50,6 @@ export default function Detail(props){
                             </div>
                         </div>
                   )})}</div>
-
                 <Link className='createActivityDetails' to= '/activities' >Create Activity</Link>
                 </div> : <p>Loading...</p>
             }

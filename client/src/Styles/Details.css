@@ -4,7 +4,7 @@
 }
 
 .cardDetail {
-    position: relative;
+    contain: content;
     text-align: center;
     margin:170px;
     margin-top: 20px;
@@ -41,7 +41,7 @@
     /* background-color: rebeccapurple; */
     margin-left: 350px;
     margin-top: 70px;
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 .liDetail{
@@ -78,6 +78,7 @@
     padding: 7px;
     display: block;
     border: none;
+    clear: both;
 }
 .createActivityDetails:hover{
     background-color: #223240;

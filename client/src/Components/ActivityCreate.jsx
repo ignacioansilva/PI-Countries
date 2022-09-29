@@ -8,21 +8,21 @@ import '../Styles/ActivityCreate.css'
 
 function validate(input){
     let errors = {};
-    if(!input.name){
-        errors.name = 'Name required'
-    } else if (!input.difficulty){
-        errors.difficulty = 'You have to choose a difficulty'
-    } else if (!input.duration){
-        errors.duration = 'Duration required'
-    } else if (!input.season){
-        errors.season = 'You have to choose a season'
-    } else if (!input.countryId){
-        errors.season = 'You have to select at less one Country'
-    }
+
+    if(!input.name) errors.name = 'Name required'
+    else if (/[^A-Za-z0-9 ]+/g.test(input.name)) errors.name = 'You can´t use special characters'
+    
+    if(!input.difficulty) errors.difficulty = 'Difficulty required'
+    
+    if(!input.duration) errors.duration = 'Duration required'
+
+    if(!input.season) errors.season = 'Season required'
+
+    if(!input.countryId) errors.countryId = 'You have to select at less one Country'
 
     return errors;
-}
 
+}
 
 
 export default function ActivityCreate() {
@@ -50,34 +50,47 @@ function handleChange(e){
     }))
 }
 
-function handleCheckSeason(e){
-    if(e.target.checked){
-        setInput({
-            ...input,
-            season: e.target.value
-        })
-    }
-}
-function handleCheckDifficulty(e){
-    if(e.target.checked){
-        setInput({
-            ...input,
-            difficulty: e.target.value
-        })
-    }
-}
 
-function handleSelect(e){
+function handleSelectCountry(e){
     setInput({
         ...input,
         countryId:[...input.countryId, e.target.value]
     })
+    setErrors(validate({
+        ...input,
+        [e.target.name]: e.target.value
+    }))
+}
+function handleSelectSeason(e){
+    setInput({
+        ...input,
+        season: e.target.value
+    })
+    setErrors(validate({
+        ...input,
+        [e.target.name]: e.target.value
+    }))
+}
 
+function handleSelectDifficulty(e){
+    setInput({
+        ...input,
+        difficulty: e.target.value
+    })
+    setErrors(validate({
+        ...input,
+        [e.target.name]: e.target.value
+    }))
 }
 
 function handleSubmit (e){
     e.preventDefault();
-    dispatch(postActivities(input))
+       
+    
+    if(!input.name || !input.difficulty || !input.duration || !input.season || !input.countryId) {
+        return alert ('Complete correctamente el formulario antes de enviarlo')
+    } else{
+        dispatch(postActivities(input)) 
     alert('Actividad agregada con exito')
     setInput({
         name:'',
@@ -87,7 +100,7 @@ function handleSubmit (e){
         countryId:[]
     })
     history.push('/home')
-}
+}}
 
 function handleDelete(el){
     setInput({
@@ -102,6 +115,10 @@ function handleDelete(el){
     dispatch(getCountries())
   }, []);
 
+
+
+
+
   return (
     <div className="container-father">
 
@@ -111,108 +128,71 @@ function handleDelete(el){
         <div className="containerCreation">
             <form onSubmit={(e)=>handleSubmit(e)}>
                 <div className='nameValue'>
+
+                    <label>Name:</label> <br />
                     {
-                        errors.name && (
+                        errors.name && ( 
                             <h3 className="ErrorText">{errors.name}</h3>
                         )
-                    }
-                        {
-                        errors.difficulty && (
-                            <h3 className="ErrorText">{errors.difficulty}</h3>
-                        )
-                    }
-                        {
-                        errors.duration && (
-                            <h3 className="ErrorText">{errors.duration}</h3>
-                        )
-                    }
-                        {
-                        errors.season && (
-                            <h3 className="ErrorText">{errors.season}</h3>
-                        )
-                    }
-                        {
-                        errors.countryId && (
-                            <h3 className="ErrorText">{errors.countryId}</h3>
-                        )
-                    }<br />
-                    <label>Name:</label><br />
+                        
+                    } <br />
                     <input className='inputCreate' type='text' value={input.name} name='name' onChange={handleChange}></input>
 
                 </div>
-                <div>
-                <label className="labelCreate">Difficulty:</label><br />
-                    <label>
-                        1
-                        <input className='inputCreate' type='checkbox' value='1' name='1' onChange={(e)=>handleCheckDifficulty(e)}/>
 
-                    </label>
-
-                    <label className="labelCreate">
-                        2
-                        <input type='checkbox' value='2' name='2' onChange={(e)=>handleCheckDifficulty(e)}/>
-
-                    </label>
-
-                    <label className="labelCreate"> 
-                        3
-                        <input  className='inputCreate' type='checkbox' value='3' name='3' onChange={(e)=>handleCheckDifficulty(e)}/>
-                        
-                    </label>
-
-                    <label className="labelCreate">
-                        4
-                        <input  className='inputCreate' type='checkbox' value='4' name='4' onChange={(e)=>handleCheckDifficulty(e)}/>
-                        
-                    </label>
-
-                    <label className="labelCreate">
-                        5
-                        <input  className='inputCreate' type='checkbox' value='5' name='5' onChange={(e)=>handleCheckDifficulty(e)}/>
-                        
-                    </label>
-
+                <div className='nameValue'>
+                    <label >Difficulty: </label>
+                    {
+                        errors.difficulty && ( 
+                            <h3 className="ErrorText">{errors.difficulty}</h3>
+                        )     
+                    } <br />
+                    <select className="selectId" name="difficulty" id="difficulty" onChange={(e) => handleSelectDifficulty(e)}>
+                    <option value="vacio"> </option>
+                            <option value={1}>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                    </select>
                 </div>
+                
                 <div>
                     <label>Duration:</label><br />
+                    {
+                        errors.duration && (
+                            <h3 className="ErrorText">{errors.duration}</h3>
+                        )
+                    }<br />
                     <input  className='inputCreate' type='text' value={input.duration} name='duration' onChange={handleChange}></input>
                 </div>
-                <div>
 
-                    <label>Season:</label><br />
-                    <label>
-                    Summer
-                        <input className='inputCreate' type='checkbox' value='Verano' name='Verano' onChange={(e)=>handleCheckSeason(e)}/>
-                        
-                    </label>
-
-                    <label>
-                    Winter
-                        <input className='inputCreate' type='checkbox' value='Invierno' name='Invierno' onChange={(e)=>handleCheckSeason(e)}/>
-                        
-                    </label>
-
-                    <label>
-                    Spring
-                        <input className='inputCreate' type='checkbox' value='Primavera' name='Primavera' onChange={(e)=>handleCheckSeason(e)}/>
-                        
-                    </label>
-
-                    <label>
-                    Autumn
-                        <input className='inputCreate' type='checkbox' value='Otoño' name='Otoño' onChange={(e)=>handleCheckSeason(e)}/>
-                        
-                    </label> 
-
+                <div className='nameValue'>
+                    <label >Season: </label>
+                    {
+                        errors.season && ( 
+                            <h3 className="ErrorText">{errors.season}</h3>
+                        )  
+                    } <br />
+                    <select className="selectId" name="season" id="season" onChange={(e) => handleSelectSeason(e)}>
+                    <option value="vacio"> </option>
+                            <option value={"Verano"}>Verano </option>
+                            <option value={"Invierno"}>Invierno </option>
+                            <option value={"Primavera"}>Primavera </option>
+                            <option value={"Otoño"}>Otoño </option>
+                    </select>
                 </div>
+                
 
-                <select  className='selectId' onChange={(e)=>handleSelect(e)}>
+                <select  className='selectId' onChange={(e)=>handleSelectCountry(e)}>
                     {countries.map((country)=>(
                         <option value={country.id}>{country.name}</option>
                     ))}
                 </select>
-                        {/* <ul><li>{input.countryId.map(el=>el + ' ,')}</li></ul> */}
-                <br />
+                {
+                    errors.countryId && (
+                    <h3 className="ErrorText">{errors.countryId}</h3>
+                )} <br />
                        
             {input.countryId.map(el=>
                 <div className="divCreate"> 
@@ -235,3 +215,4 @@ function handleDelete(el){
   )
 
 }
+
