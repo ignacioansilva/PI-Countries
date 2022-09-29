@@ -1,7 +1,7 @@
 import React  from 'react';
 import {useState, useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { getCountries, getActivities,filterCountriesbyContinent, orderByName, orderByPopulation ,filterByActivities} from '../Actions';
+import { getCountries, getActivities,filterCountriesbyContinent, orderByName, orderByPopulation ,filterByActivities, getDetail} from '../Actions';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 import Paginate from './Paginado';
@@ -26,12 +26,14 @@ export default function Home () {
     useEffect((() => {
         dispatch(getCountries());
         dispatch(getActivities());
+        dispatch(getDetail())
     }), [dispatch]); 
 
 
 function handleClickCountries(e){
     e.preventDefault();
     dispatch(getCountries())
+  
 }
 
 function handleSortAlpha(e){
@@ -115,8 +117,8 @@ function handleFilterByAct(e){
                     return (
                      
                 // <Link to={'/home/' + p.id}>/*
-                 <Link to={`/home/${p.id}`}> 
-                <Card flag={p.flag} name={p.name} continent={p.continent} key={p.id}/>
+            <Link  to={'/countries/' + p.id}>
+                <Card  flag={p.flag} name={p.name} continent={p.continent} key={p.id}/>
             </Link>               
                    
                     );

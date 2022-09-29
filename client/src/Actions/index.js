@@ -74,9 +74,10 @@ export function filterByActivities(payload){
 export function getDetail(id){
     return async function(dispatch){
         try{
-            let json= await axios.get('http://localhost:3001/countries/'+id)
+            const json= await axios.get('http://localhost:3001/countries/' + id) 
+            console.log(json)
         return dispatch({
-            type: 'GET_DETAIL',
+            type: 'DETAIL',
             payload:json.data
         })
         } catch (error){
@@ -84,4 +85,3 @@ export function getDetail(id){
         }
     }
 }
-

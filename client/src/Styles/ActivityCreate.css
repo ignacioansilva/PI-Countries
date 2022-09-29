@@ -1,4 +1,3 @@
-
 .container-father{
     width: 100%;
     height: 100%;
@@ -18,7 +17,6 @@
 }
 
 .titleCreate {
-
     font-family: 'Patua One', cursive;
     text-align: center;
     color: aliceblue;
@@ -26,7 +24,6 @@
     margin: 0;
     margin-bottom: 50px;
     padding:30px
-
 }
 
 .labelCreate {
@@ -35,20 +32,18 @@
 }
 
 .inputCreate {
-
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        margin: 10px;
-        background-color: aliceblue;
-        border-style: solid;
-        border-radius: 20px;
-        border-color: #223240;
-        color:#223240;
-        padding: 8px;
-        text-align: center;
-    }
-
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 10px;
+    background-color: aliceblue;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #223240;
+    color:#223240;
+    padding: 8px;
+    text-align: center;
+}
 .inputCreate:hover{
         background-color: #223240;
         border-color: aliceblue;
@@ -58,14 +53,12 @@
 .buttonCreate{
     font-family: 'Quicksand', sans-serif;
     background-color: aliceblue;
-        font-size: 2.5vh;
-        font-weight: bold;
-        margin:10px;
-        padding: 7px;
-        cursor: pointer;
-        border-radius: 20px;
-
-
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin:10px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 20px;
 }
 .buttonCreate:hover{
     background-color: #223240;
@@ -74,6 +67,7 @@
     transition: 0.2s;
 
 }
+
 .selectId {
     font-family: 'Quicksand', sans-serif;
     font-size: 15px;
@@ -93,20 +87,15 @@
     color:#223240;
 }
 
-
 .pCreate {
     color:black;
     display: inline-block;
-
 }
 
 .divCreate{
     display: inline-block;
-
     text-align: center;
-
 }
-
 
 .ErrorText{
     display: inline-block;
@@ -117,8 +106,6 @@
     padding: 3px 50px;
     font-size: 20px;
 }
-
-
 
 .buttonX {
     margin:5px;

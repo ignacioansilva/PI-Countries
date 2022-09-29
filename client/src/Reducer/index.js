@@ -3,7 +3,6 @@ const initialState = {
     countries : [],
     allCountries : [],
     activities : [],
-    allActivities : [],
     detail: []
 }
 
@@ -22,10 +21,10 @@ export function RootReducer(state=initialState,action) {
                 countries:action.payload
             }
 
-        case 'GET_DETAIL':
+        case 'DETAIL':
             return{
                 ...state,
-                details:action.payload
+                detail:action.payload
             }
 
         case 'POST_ACTIVITY':
