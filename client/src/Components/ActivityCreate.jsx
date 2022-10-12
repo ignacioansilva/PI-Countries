@@ -1,5 +1,5 @@
 import React from "react";
-import { Link,useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { postActivities,getActivities, getCountries } from "../Actions/index"
 import { useDispatch,useSelector }  from "react-redux";
 import { useEffect } from "react";
@@ -105,9 +105,8 @@ function handleSubmit (e){
 function handleDelete(el){
     setInput({
         ...input,
-        countryId: input.countryId.filter(occ => occ !== el)
+        countryId: input.countryId.filter(del => del !== el)
     })
-
 }
 
   useEffect(()=>{
@@ -149,7 +148,7 @@ function handleDelete(el){
                     } <br />
                     <select className="selectId" name="difficulty" id="difficulty" onChange={(e) => handleSelectDifficulty(e)}>
                     <option value="vacio"> </option>
-                            <option value={1}>1</option>
+                            <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -204,11 +203,6 @@ function handleDelete(el){
             <br />
                 <button className='buttonCreate' type='submit'>Create!</button>
             </form>
-
-
-
-
-
 
         </div>
     </div>

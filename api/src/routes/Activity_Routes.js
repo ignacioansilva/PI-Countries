@@ -29,6 +29,18 @@ router.post ('/', async (req,res)=> {
         res.status(200).send(activities);
     });
 
+    router.put('/:id', async(req, res)=>{
+        const { id } = req.params;
+        const { difficulty } = req.body;
+       
+       const activity =  await Activity.update({difficulty: difficulty},{
+            where: {
+               id:id,
+            }
+        })
+        res.status(200).send(activity)
+    })
+
 
 module.exports = router;
  
